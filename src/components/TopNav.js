@@ -15,7 +15,7 @@ export function TopNav(props) {
     const routeChange = (path) => {
         navigate(path);
     }
-    return <Box sx={{ position: "fixed", width: "95vw", height: "50px", bgcolor: 'background.default', }}>
+    return <Box sx={{ position: "fixed", width: "95vw", height: "50px", bgcolor: 'background.default', zIndex: 2}}>
         <IconButton sx={{ ml: 1, margin: "15px" }} onClick={props.colorMode.toggleColorMode} color="inherit">
             {props.theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
         </IconButton>

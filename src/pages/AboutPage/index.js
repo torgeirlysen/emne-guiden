@@ -50,7 +50,7 @@ export function AboutPage(props) {
 
 
 function Contributions() {
-    const [contributors, updateContributors] = useState([])
+    const [contributors, updateContributors] = useState([{login: "Loading...."}])
     useEffect(() => {
         const fetchData = async () => {
             const octokit = new Octokit()
@@ -69,7 +69,7 @@ function Contributions() {
 
     return <Box sx={{marginTop: "30px", marginBottom: "30px"}}>
         <Button 
-        sx={{color: "white"}}
+        sx={{color: "text.primary"}}
         onClick={() => openInNewTab("https://github.com/torgeirlysen/emne-guiden/graphs/contributors")}>
         <Typography variant="h4">
             Contributors
