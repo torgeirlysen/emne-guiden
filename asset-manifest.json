@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/emne-guiden/static/css/main.e6c13ad2.css",
-    "main.js": "/emne-guiden/static/js/main.d5596ad9.js",
+    "main.js": "/emne-guiden/static/js/main.2a1fdcea.js",
     "static/js/787.79b9f53d.chunk.js": "/emne-guiden/static/js/787.79b9f53d.chunk.js",
     "index.html": "/emne-guiden/index.html",
     "main.e6c13ad2.css.map": "/emne-guiden/static/css/main.e6c13ad2.css.map",
-    "main.d5596ad9.js.map": "/emne-guiden/static/js/main.d5596ad9.js.map",
+    "main.2a1fdcea.js.map": "/emne-guiden/static/js/main.2a1fdcea.js.map",
     "787.79b9f53d.chunk.js.map": "/emne-guiden/static/js/787.79b9f53d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.d5596ad9.js"
+    "static/js/main.2a1fdcea.js"
   ]
 }
