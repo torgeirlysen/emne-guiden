@@ -12,7 +12,7 @@ export function HomePage(props) {
     const alleEmner = getEmner()
     const [emner, changeEmner] = React.useState(alleEmner)
     let søkBlantEmner = (s) => {
-        let tempEmner = alleEmner.filter(emne => emne.kode.startsWith(s.toUpperCase()))
+        let tempEmner = alleEmner.filter(emne => emne.kode.startsWith(s.toUpperCase()) || emne.navn.toUpperCase().startsWith(s.toUpperCase()))
         changeEmner(tempEmner)
     }
 
