@@ -1,12 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material/';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import IconButton from '@mui/material/IconButton';
-import { EmneListe, FullWidthTextField } from '../../components/EmneListe';
+import { EmneListe } from '../../components/EmneListe';
 import { SøkeFelt } from '../../components/Søkefelt';
 import { getEmner } from '../../functions/getEmner';
+import { TopNav } from '../../components/TopNav';
 
 export function HomePage(props) {
     const alleEmner = getEmner()
@@ -24,7 +22,7 @@ export function HomePage(props) {
         };
         if (tempEmner.length) {
             if (typeof emner[0][attribute] === 'string' || emner[0][attribute] instanceof String) {
-                sortingFunction = (a,b) => a[attribute].localeCompare(b[attribute], 'en', { sensitivity: 'base' })
+                sortingFunction = (a, b) => a[attribute].localeCompare(b[attribute], 'en', { sensitivity: 'base' })
             }
         }
         tempEmner.sort(sortingFunction);
@@ -47,11 +45,7 @@ export function HomePage(props) {
             p: 0
         }}
     >
-        <Box sx={{ position: "fixed", width: "95vw", height: "50px", bgcolor: 'background.default', }}>
-            <IconButton sx={{ ml: 1, margin: "15px" }} onClick={props.colorMode.toggleColorMode} color="inherit">
-                {props.theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
-        </Box>
+        <TopNav theme={props.theme} colorMode={props.colorMode} />
         <Box
             sx={{
                 display: 'flex',

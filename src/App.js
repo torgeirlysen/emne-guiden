@@ -1,12 +1,8 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import { Typography } from '@mui/material/';
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import IconButton from '@mui/material/IconButton';
-import { EmneListe, FullWidthTextField } from './components/EmneListe';
 import { HomePage } from './pages/HomePage';
+import { AboutPage } from './pages/AboutPage';
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
@@ -14,7 +10,13 @@ function App() {
   const theme = useTheme();
   const colorMode = React.useContext(ColorModeContext);
   return (
-    <HomePage theme={theme} colorMode={colorMode} />
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<HomePage theme={theme} colorMode={colorMode} />} />
+        <Route path="/about" element={<AboutPage theme={theme} colorMode={colorMode} />} />
+      </Routes>
+    </HashRouter>
+
   );
 }
 
