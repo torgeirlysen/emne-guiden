@@ -16,7 +16,7 @@ export function HomePage(props) {
         changeEmner(tempEmner)
     }
 
-    let sorterEmner = (attribute, stigende) => {
+    let sorterEmner = (attribute, synkende) => {
         var tempEmner = Array.from(emner);
 
         let sortingFunction = function (a, b) {
@@ -30,7 +30,7 @@ export function HomePage(props) {
         tempEmner.sort(sortingFunction);
 
 
-        if (stigende) {
+        if (synkende) {
             tempEmner.reverse()
         }
 

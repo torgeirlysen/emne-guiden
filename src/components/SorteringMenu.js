@@ -29,7 +29,7 @@ export function SorteringMenu(props) {
     const onMenuItemClick = (event, index) => {
         setAnchor(null);
         setSelected(index);
-        props.sorterEmner(["navn","kode","snitt","strykProsent",][Math.floor(index/2)], index % 2)
+        props.sorterEmner(["navn","kode","snitt","strykProsent",][Math.floor(index/2)], (index + 1) % 2)
     };
     return (
         <Box >
