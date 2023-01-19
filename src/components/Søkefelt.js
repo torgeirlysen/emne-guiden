@@ -15,7 +15,7 @@ export function SøkeFelt(props) {
             }}
         >
             <TextField fullWidth label="Emnekode/Emnenavn" id="fullWidth" onChange={e => props.søkBlantEmner(e.target.value)} />
-            <SorteringMenu />
+            <SorteringMenu sorterEmner={props.sorterEmner}/>
         </Box>
     );
 }

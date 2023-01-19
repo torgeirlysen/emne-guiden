@@ -16,6 +16,26 @@ export function HomePage(props) {
         changeEmner(tempEmner)
     }
 
+    let sorterEmner = (attribute, stigende) => {
+        var tempEmner = Array.from(emner);
+
+        let sortingFunction = function (a, b) {
+            return a[attribute] - b[attribute];
+        };
+        if (tempEmner.length) {
+            if (typeof emner[0][attribute] === 'string' || emner[0][attribute] instanceof String) {
+                sortingFunction = (a,b) => a[attribute].localeCompare(b[attribute], 'en', { sensitivity: 'base' })
+            }
+        }
+        tempEmner.sort(sortingFunction);
+
+
+        if (stigende) {
+            tempEmner.reverse()
+        }
+
+        changeEmner(tempEmner)
+    }
     return <Box
         sx={{
             width: '100vw',
@@ -45,7 +65,7 @@ export function HomePage(props) {
                 <Typography variant="h2" sx={{ marginBottom: "30px" }}>
                     Emne Guiden
                 </Typography>
-                <SøkeFelt søkBlantEmner={søkBlantEmner} />
+                <SøkeFelt søkBlantEmner={søkBlantEmner} sorterEmner={sorterEmner} />
                 <EmneListe emner={emner} />
             </Box>
         </Box>

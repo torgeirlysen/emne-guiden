@@ -7,14 +7,13 @@ import SortIcon from '@mui/icons-material/Sort';
 import { useState } from "react";
 
 
-export function SorteringMenu() {
+export function SorteringMenu(props) {
     const [anchor, setAnchor] = useState(null);
     const options = [
         "Emnenavn (synkende)", "Emnenavn (stigende)", 
         "Emnekode (synkende)", "Emnekode (stigende)", 
         "Snitt (synkende)", "Snitt (stigende)",
         "Strykprosent (synkende)", "Strykprosent (stigende)",
-        "Antall studenter (synkende)", "Antall studenter (stigende)",
     ];
 
     const [selected, setSelected] = useState(-1);
@@ -30,6 +29,7 @@ export function SorteringMenu() {
     const onMenuItemClick = (event, index) => {
         setAnchor(null);
         setSelected(index);
+        props.sorterEmner(["navn","kode","snitt","strykProsent",][Math.floor(index/2)], index % 2)
     };
     return (
         <Box >
