@@ -15,7 +15,6 @@ export function EmneListe(props) {
 
     return (
         <Box sx={{ width: '80vw', maxWidth: 700, bgcolor: 'background.paper' }}>
-            <nav aria-label="main mailbox folders">
                 <List>
                     <ListItem disablePadding>
                         <ListItemText primary="Navn" />
@@ -30,7 +29,6 @@ export function EmneListe(props) {
                     )}
 
                 </List>
-            </nav>
         </Box>
     );
 }
@@ -39,7 +37,7 @@ function EmneItem(props) {
     let emne = props.emne
     return <>
         <ListItem key={props.key} disablePadding onClick={() => openInNewTab(`https://www.ntnu.no/studier/emner/${emne.kode}`)}>
-            <ListItemButton component="a" href="#simple-list">
+            <ListItemButton component="a" >
                 <ListItemText primary={
                     <div style={{ maxWidth: "calc(80vw-100px)" }}>
                         {emne.navn}
