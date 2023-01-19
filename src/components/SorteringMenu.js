@@ -5,7 +5,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Slide from '@mui/material/Slide';
 import SortIcon from '@mui/icons-material/Sort';
 import { useState } from "react";
-import { Typography } from '@mui/material';
 
 
 export function SorteringMenu() {
@@ -46,7 +45,7 @@ export function SorteringMenu() {
                 TransitionComponent={Slide}
                 PaperProps={{
                     style: {
-                        maxHeight: 40 * 10,
+                        maxHeight: 40 * options.length,
                         width: "28ch",
                     },
                 }}

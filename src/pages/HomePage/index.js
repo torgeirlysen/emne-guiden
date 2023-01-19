@@ -27,30 +27,27 @@ export function HomePage(props) {
             p: 0
         }}
     >
-            <Box sx={{ position: "fixed", width: "95vw", height: "50px", bgcolor: 'background.default', }}>
-                <IconButton sx={{ ml: 1, margin: "15px" }} onClick={props.colorMode.toggleColorMode} color="inherit">
-                    {props.theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-                </IconButton>
+        <Box sx={{ position: "fixed", width: "95vw", height: "50px", bgcolor: 'background.default', }}>
+            <IconButton sx={{ ml: 1, margin: "15px" }} onClick={props.colorMode.toggleColorMode} color="inherit">
+                {props.theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+            </IconButton>
+        </Box>
+        <Box
+            sx={{
+                display: 'flex',
+                width: '100vw',
+                justifyContent: 'center',
+            }}
+        >
+            <Box sx={{
+                maxWidth: '90%', marginTop: "50px"
+            }}>
+                <Typography variant="h2" sx={{ marginBottom: "30px" }}>
+                    Emne Guiden
+                </Typography>
+                <SøkeFelt søkBlantEmner={søkBlantEmner} />
+                <EmneListe emner={emner} />
             </Box>
-            <Box
-                sx={{
-                    display: 'flex',
-                    width: '100vw',
-                    justifyContent: 'center',
-
-                }}
-            >
-                <Box sx={{
-                    maxWidth: '90%', marginTop: "50px"
-                }}>
-
-                    <Typography variant="h2" sx={{ marginBottom: "30px" }}>
-                        Emne Guiden
-                    </Typography>
-                    <SøkeFelt søkBlantEmner={søkBlantEmner} />
-
-                    <EmneListe emner={emner} />
-                </Box>
         </Box>
     </Box>
 }

@@ -15,20 +15,20 @@ export function EmneListe(props) {
 
     return (
         <Box sx={{ width: '80vw', maxWidth: 700, bgcolor: 'background.paper' }}>
-                <List>
-                    <ListItem disablePadding>
-                        <ListItemText primary="Navn" />
-                        <Box>
-                            <ListItemText
-                                primary="Strykprosent/Snitt"
-                                sx={{ marginLeft: "auto" }}
-                            />
-                        </Box>
-                    </ListItem>
-                    {props.emner.map((emne, i) => <EmneItem key={i} emne={emne} />
-                    )}
+            <List>
+                <ListItem disablePadding>
+                    <ListItemText primary="Navn" />
+                    <Box>
+                        <ListItemText
+                            primary="Strykprosent/Snitt"
+                            sx={{ marginLeft: "auto" }}
+                        />
+                    </Box>
+                </ListItem>
+                {props.emner.map((emne, i) => <EmneItem key={i} emne={emne} />
+                )}
 
-                </List>
+            </List>
         </Box>
     );
 }
@@ -43,10 +43,22 @@ function EmneItem(props) {
                         {emne.navn}
                     </div>
                 } secondary={emne.kode} href="You" />
-                <Box>
+                <Box sx={{ textAlign: "right" }}>
                     <ListItemText
-                        primary={emne.strykProsent}
-                        secondary={emne.snitt}
+                        primary={
+                            `${emne.strykProsent}%`
+                        }
+                        secondary={
+                            <>
+                                <span style={{ width: "7ch" }}>
+                                    {emne.snitt}
+                                    <span style={{ marginLeft: "1ch" }}>
+                                        {["F", "E", "D", "C", "B", "A"][Math.round(emne.snitt)]}
+                                    </span>
+                                </span>
+                            </>
+
+                        }
 
                     />
                 </Box>
